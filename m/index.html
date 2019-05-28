@@ -108,71 +108,78 @@
   <script>
     function ViewAllButton() {
       window.location.href = 'https://www.ephrine.in/products.html';
-
+    }
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      
+    }else{
+      window.location.href = '../index.html';
 
     }
+
+
   </script>
 </head>
 
 <body>
   <!-- Image and text -->
 
- 
+
   <nav class="navbar navbar-expand-lg navbar-light navbar-custom " style='align-content: center'>
 
 
-      <a class="navbar-brand" href="#">
-        <img src="../img/ephrine1.png" width="150" height="70" class="d-inline-block align-top" alt="Ephrine Apps"
-          style="margin-right: 50px;">
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-  
-      <div class="collapse navbar-collapse" id="navbarNav">
-  
-        <ul class="nav nav-pills">
-  
-          <li class="nav-item">
-            <a class="nav-link"  href="index.html" style="background:purple;">
-              <font color="white" style="font-family: 'Roboto', sans-serif;">Home
-              </font>
-            </a>
-          </li>
-          <li class="nav-item active">
-                  <a class="nav-link" href="products.html" >
-                    <font color="purple" style="font-family: 'Roboto', sans-serif;">Products</font>
-                  </a>
-                </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <font color="purple" style="font-family: 'Roboto', sans-serif;">Blog</font>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="contact.html">
-              <font color="purple" style="font-family: 'Roboto', sans-serif;">Contact us</font>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">
-              <font color="purple" style="font-family: 'Roboto', sans-serif;">About</font>
-            </a>
-          </li>
-        </ul>
-      </div>
-  <!--    <h6 class="collapse navbar-collapse" style="text-align: right; display: inline; vertical-align: middle; margin-right: 0px">
+    <a class="navbar-brand" href="#">
+      <img src="../img/ephrine1.png" width="150" height="70" class="d-inline-block align-top" alt="Ephrine Apps"
+        style="margin-right: 50px;">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+
+      <ul class="nav nav-pills">
+
+        <li class="nav-item">
+          <a class="nav-link" href="index.html" style="background:purple;">
+            <font color="white" style="font-family: 'Roboto', sans-serif;">Home
+            </font>
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="products.html">
+            <font color="purple" style="font-family: 'Roboto', sans-serif;">Products</font>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <font color="purple" style="font-family: 'Roboto', sans-serif;">Blog</font>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="contact.html">
+            <font color="purple" style="font-family: 'Roboto', sans-serif;">Contact us</font>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">
+            <font color="purple" style="font-family: 'Roboto', sans-serif;">About</font>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!--    <h6 class="collapse navbar-collapse" style="text-align: right; display: inline; vertical-align: middle; margin-right: 0px">
           <a href="https://www.facebook.com/ephrineapps/"><img src="../img/fb-logo.png" height="30px" width="30px" style="margin-right: 10px"></a>
           <a href="https://www.instagram.com/ephrineapps/"><img src="../img/instagram-logo.png" height="30px" width="30px" style="margin-right: 10px"></a>
           <a href="https://www.linkedin.com/company/ephrine"><img src="../img/In-Blue-48.png" height="30px" width="30px" style="margin-right: 10px"></a>
           <!--<a href="#" hidden="true"><img src="img/wa-logo-sq.png" height="30px" width="30px" style="margin-right: 10px"></a>-->
-       <!--   <a href="https://github.com/ephrine"><img src="../img/GitHub-Mark-64px.png" height="30px" width="30px" style="margin-right: 10px"></a>
+    <!--   <a href="https://github.com/ephrine"><img src="../img/GitHub-Mark-64px.png" height="30px" width="30px" style="margin-right: 10px"></a>
         </h6> -->
-    </nav>
+  </nav>
 
-    <div class="jumbotron" style=" background-image: url('../img/bg-m-800px.png'); background-size: auto; height: 300px;  background-position: center; ">
-</div>
+  <div class="jumbotron"
+    style=" background-image: url('../img/bg-m-800px.png'); background-size: auto; height: 300px;  background-position: center; ">
+  </div>
   <!-- ------------------------------- -->
   <div class="jumbotron" style="background-color: lavender;">
     <h1 class="display-4">
@@ -193,13 +200,14 @@
               Productivity.</p>
             <!--       <a class="btn btn-primary btn-lg" href="#" role="button" style="background-color: purple">Learn more</a>
             -->
-         <center>   <a href='https://play.google.com/store/apps/dev?id=6568269370408193556&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'
-              target="_blank">
-              <img height="80px" width="190px" alt='Get it on Google Play' height="100px" width="270px"
-                src='https://play.google.com/intl/en/badges/images/generic/en_badge_web_generic.png' /></a>
-              </center>
+            <center> <a
+                href='https://play.google.com/store/apps/dev?id=6568269370408193556&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'
+                target="_blank">
+                <img height="80px" width="190px" alt='Get it on Google Play' height="100px" width="270px"
+                  src='https://play.google.com/intl/en/badges/images/generic/en_badge_web_generic.png' /></a>
+            </center>
           </div>
-         
+
         </div>
       </div>
     </div>
@@ -241,7 +249,7 @@
             </center>
           </div>
         </div>
-<!--------------->
+        <!--------------->
         <div class="col-sm">
 
           <div class="card card-block mb-3 shadow p-3 bg-white rounded" style="width: auto;">
@@ -252,15 +260,18 @@
                 </div>
                 <div class="col col-sm-7" style="text-align: left">
                   <div class="card-body" style="padding-left: 0px">
-                    <center><h5 class="card-title"><img src="../img/jinx-icon.png" height="50px" width="50px"><br>Jinx: Self-Diagnosis for Depression</h5></center>
+                    <center>
+                      <h5 class="card-title"><img src="../img/jinx-icon.png" height="50px" width="50px"><br>Jinx:
+                        Self-Diagnosis for Depression</h5>
+                    </center>
                     <span class="badge badge-pill badge-primary" style="background-color: purple">Health App</span>
                     <p style="margin-top: 10px" class="card-text">Jinx provides an provide an easy way to evaluate your
                       mental state based on mood and Anhedonia over past few weeks and our complex algorithm calculate
                       your mental state to provide you a reliable diagnostic results.</p>
                     <p class="card-text" hidden="true"><small class="text-muted">Last updated 3 mins ago</small></p>
-                   
-                    <a href="https://play.google.com/store/apps/details?id=devesh.ephrine.depression.self.diagnosis" target="_blank"
-                      class="btn btn-primary" style="background-color: forestgreen"><img
+
+                    <a href="https://play.google.com/store/apps/details?id=devesh.ephrine.depression.self.diagnosis"
+                      target="_blank" class="btn btn-primary" style="background-color: forestgreen"><img
                         src="../img/android_white_48dp.png" height="20px" width="20px"> Download</a>
                   </div>
                 </div>
@@ -270,7 +281,7 @@
           </div>
         </div>
 
-       
+
       </div>
       <center><button type="button" class="btn btn-primary btn-lg"
           style="background-color: purple; width: 200px; margin-bottom: 10px" onclick="ViewAllButton()">View
@@ -281,9 +292,9 @@
 
   <!--Footer-->
 
-  <div class="card-footer text-light" style="background-color: rebeccapurple; " >
+  <div class="card-footer text-light" style="background-color: rebeccapurple; ">
 
-    <footer class="blockquote-footer text-light"  >
+    <footer class="blockquote-footer text-light">
       <center>
         <h5 class="text-light" style="font-family: 'Prompt', sans-serif; font-size: small;"><a href="#"
             class="text-white">Privacy policy</a> | <a href="#" class="text-white">Official Devesh Blog</a> | <a
@@ -304,8 +315,8 @@
           <a href="https://www.linkedin.com/company/ephrine/" target="_blank"><img src="../img/In-Blue-48.png"
               height="20px" width="20px" style="margin-right: 10px"></a>
           <!-- <a href="#"><img src="img/wa-logo-sq.png" height="20px" width="20px" style="margin-right: 10px"></a>-->
-          <a href="https://github.com/ephrine/" target="_blank"><img src="../img/GitHub-Mark-Light-64px.png" height="20px"
-              width="20px" style="margin-right: 10px"></a>
+          <a href="https://github.com/ephrine/" target="_blank"><img src="../img/GitHub-Mark-Light-64px.png"
+              height="20px" width="20px" style="margin-right: 10px"></a>
         </h6>
       </center>
 
