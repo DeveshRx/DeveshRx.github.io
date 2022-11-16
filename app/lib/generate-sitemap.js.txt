@@ -1,0 +1,220 @@
+// DEPRECIATED 
+// bug: dosent work with dynamic pages [id].js
+
+
+const fs = require('fs')
+const globby = require('globby')
+var wpcom = require('wpcom')();
+
+const { MongoClient } = require('mongodb');
+
+const uri = process.env.MONGODB_URI
+const options = {}
+
+let client
+let clientPromise
+
+if (!process.env.MONGODB_URI) {
+  throw new Error('Please add your Mongo URI to .env.local')
+}
+
+if (process.env.NODE_ENV === 'development') {
+  // In development mode, use a global variable so that the value
+  // is preserved across module reloads caused by HMR (Hot Module Replacement).
+  if (!global._mongoClientPromise) {
+    client = new MongoClient(uri, options)
+    global._mongoClientPromise = client.connect()
+  }
+  clientPromise = global._mongoClientPromise
+} else {
+  // In production mode, it's best to not use a global variable.
+  client = new MongoClient(uri, options)
+  clientPromise = client.connect()
+}
+
+
+
+const DOMAIN = process.env.NEXT_PUBLIC_WEBSITE_URL;
+const db_name = process.env.MONGODB_DB;
+
+
+function addPage(page) {
+  const path = page.replace('pages', '').replace('.js', '').replace('.mdx', '')
+  var route = path === '/index' ? '' : path
+  if (route == '/[id]') {
+    route = '';
+  }
+  if (route == '/[category]/[id]') {
+    route = '/';
+  }
+  
+  if (route == '/[category]/index') {
+    route = '/';
+  }
+
+  if (route == '/products/[id]') {
+    route = '/products';
+  }
+
+  return `  <url>
+    <loc>${`${process.env.NEXT_PUBLIC_WEBSITE_URL}${route}`}</loc>
+    <changefreq>hourly</changefreq>
+  </url>`
+}
+
+async function generateSitemap() {
+  // Ignore Next.js specific files (e.g., _app.js) and API routes.
+
+  const DynURLs = await getDynamicBlogPages();
+  const ProductsURLs = await getProducts();
+
+  const pages = await globby([
+    'pages/**/*{.js,.mdx}',
+    '!pages/_*.js',
+    '!pages/api',
+  ])
+  const sitemap = `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${pages.map(addPage).join('\n')}
+${DynURLs}
+${ProductsURLs}
+</urlset>`
+
+  fs.writeFileSync('public/sitemap.xml', sitemap);
+  console.log("Sitemap Generated :)");
+
+  await generateGoogleNewsSitemap();
+
+}
+
+var Posts = [];
+var PostsURLs = [];
+async function getDynamicBlogPages() {
+  var blog = wpcom.site(process.env.WP_SITE);
+
+  await blog
+    .postsList({ number: 100 })
+    .then(list => {
+      console.log(list);
+      Posts = list.posts;
+      Posts.forEach(p => {
+
+        var c = Object.keys(p.categories)[0];
+        const category = p.categories;
+     
+        const urlPage =DOMAIN + "/"+category[c].slug+"/" + p.slug;
+    
+        PostsURLs.push(urlPage);
+
+      });
+
+
+    })
+    .catch(error => {
+      console.log("WP ERROR");
+      console.log(error);
+    });
+
+  var URLs = [];
+  PostsURLs.forEach(url => {
+    var str = `<url>
+  <loc>${`${url}`}</loc>
+</url>`;
+
+    URLs.push(str);
+  });
+  return URLs.join('\n');
+
+}
+
+
+function generateGoogleNewsSitemap() {
+
+
+  var urls = [];
+  Posts.forEach(p => {
+    const date = p.date;
+    const title = p.title;
+
+    var c = Object.keys(p.categories)[0];
+    const category = p.categories;
+ 
+    const urlPage =DOMAIN + "/"+category[c].slug+"/" + p.slug;
+
+    urls.push(`<url>
+  <loc>${urlPage}</loc>
+  <news:news>
+  <news:publication>
+    <news:name>BitVedas</news:name>
+    <news:language>en</news:language>
+  </news:publication>
+
+  <news:publication_date>${date}</news:publication_date>
+    <news:title>${title}</news:title>
+   </news:news>
+ </url>`);
+
+  });
+
+
+  var sitemap = `
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+  
+  
+        ${urls.join('\n')}
+</urlset>
+`;
+
+  fs.writeFileSync('public/sitemap-news.xml', sitemap);
+  console.log("News Sitemap Generated :)");
+
+
+}
+
+var products_list = [];
+
+function getProducts() {
+
+  return getMongoDocs().then(docs => {
+
+    docs.forEach(d => {
+      //products_list.push(d.slug);
+      const slug = d.slug;
+
+      var str = `<url>
+      <loc>${`${DOMAIN}/products/${slug}`}</loc>
+      
+    </url>`;
+
+      products_list.push(str)
+    });
+
+  }).then(() => {
+    return products_list.join('\n');
+  });
+
+
+}
+
+async function getMongoDocs() {
+  await clientPromise;
+  // `await clientPromise` will use the default database passed in the MONGODB_URI
+  // However you can use another database (e.g. myDatabase) by replacing the `await clientPromise` with the following code:
+  // Then you can execute queries against your database like so:
+  // db.find({}) or any of the MongoDB Node Driver commands
+
+  const client = await clientPromise;
+  let db = await client.db(db_name);
+  const query = {};
+  const options = {};
+  const cursor = await db.collection('products').find(query, options);
+  const docs = await cursor.toArray();
+  return docs;
+}
+
+
+
+
+
+generateSitemap();

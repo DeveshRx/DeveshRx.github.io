@@ -1,0 +1,452 @@
+@import './fonts.scss';
+@import './theme.scss';
+@import './breakpoints.scss';
+
+$UniversalPadding: 15px;
+$TitleFontSize: 25pt;
+$TitleFontSize_Mobile: 18pt;
+$TitleFontSize_Tablet: 18pt;
+
+$UniversalMaxWidth: 2000px;
+
+// Theme Color
+// https://m2.material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=2962FF&secondary.color=FFD600
+$primaryColor: #2962ff;
+$primaryLightColor: #768fff;
+$primaryDarkColor: #0039cb;
+$secondaryColor: #ffd600;
+$secondaryLightColor: #ffff52;
+$secondaryDarkColor: #c7a500;
+$primaryTextColor: #ffffff;
+$secondaryTextColor: #000000;
+//==
+
+
+.container {
+  padding: 0px !important;
+  margin: 0px !important;
+  @extend .fontRoboto;
+  width: 100% !important;
+}
+
+
+// Header
+
+.header {
+  height: fit-content;
+  height: 200px;
+  display: flex;
+
+  /*  background-image: url('./../assets/img/work_banner_desktop.jpg');
+  background-size: cover;
+  background-position: bottom;
+*/
+  max-width: 550px;
+  margin: auto;
+  position: relative;
+  z-index: 0;
+}
+
+.mTitle {
+  margin-top: 70px;
+  margin-bottom: 0px;
+  width: auto;
+  height: 60px;
+  margin: auto;
+  text-align: center;
+  color: $primaryColor;
+  //   background-color: #ffffff8e;
+  @extend .fontRoboto;
+  // border-radius: 15px;
+  padding: 4px;
+
+  h1 {
+    margin-top: 0px;
+    font-weight: 900;
+  }
+
+  font-size: $TitleFontSize;
+  text-shadow: 2px 0px 1px rgb(255, 255, 255),
+  0px 2px 1px rgb(255, 255, 255),
+  -2px 0px 1px rgba(255, 255, 255, 1),
+  0px -2px 1px rgba(255, 255, 255, 1);
+
+}
+
+
+.headerImage {
+  position: absolute;
+  right: 5px;
+  bottom: 0px;
+  z-index: -1;
+
+  height: 200px;
+  width: auto;
+}
+
+.About {
+  @extend .fontRoboto;
+  margin: auto;
+  text-align: left;
+  padding: $UniversalPadding;
+  font-size: 20px;
+  max-width: 800px;
+
+  // text-align: justify;
+  @include bp-max-width($BreakPoint_Tabet) {
+    font-size: 15px;
+
+  }
+
+  @include bp-max-width($BreakPoint_Phone_L) {
+    font-size: 15px;
+
+  }
+}
+
+
+// BG Sections
+.AlphaHeaderBG {
+  margin: 5px;
+
+}
+
+.AndroidAppDevBg_AlphaHeader {
+  @extend .AlphaHeaderBG;
+  background: rgb(41, 158, 10);
+  background: linear-gradient(90deg, rgba(62, 247, 11, 0.37) 0%, rgba(0, 212, 255, 0) 100%);
+
+  @include bp-max-width($BreakPoint_Phone_L) {
+    background: rgba(55, 255, 0, 0.274);
+  }
+}
+
+.WebDevBg_AlphaHeader {
+  @extend .AlphaHeaderBG;
+  background: rgb(10, 124, 158);
+  background: linear-gradient(270deg, rgba(11, 247, 235, 0.37) 0%, rgba(0, 212, 255, 0) 100%);
+
+  @include bp-max-width($BreakPoint_Phone_L) {
+    background: rgba(0, 255, 255, 0.274);
+  }
+}
+
+.BusinessBg_AlphaHeader {
+  $mColor: rgb(255, 240, 211);
+  @extend .AlphaHeaderBG;
+  background: $mColor;
+  background: linear-gradient(90deg, $mColor 0%, rgba(0, 212, 255, 0) 100%);
+
+  @include bp-max-width($BreakPoint_Phone_L) {
+    background: $mColor;
+  }
+}
+
+.GamingBg_AlphaHeader {
+  $mColor: rgb(255, 185, 185);
+  @extend .AlphaHeaderBG;
+  background: $mColor;
+  background: linear-gradient(270deg, $mColor 0%, rgba(0, 212, 255, 0) 100%);
+
+  @include bp-max-width($BreakPoint_Phone_L) {
+    background: $mColor;
+  }
+}
+
+.VideoEditingBg_AlphaHeader {
+  $mColor: rgb(221, 185, 255);
+  @extend .AlphaHeaderBG;
+  background: $mColor;
+  background: linear-gradient(90deg, $mColor 0%, rgba(0, 212, 255, 0) 100%);
+
+  @include bp-max-width($BreakPoint_Phone_L) {
+    background: $mColor;
+  }
+}
+
+.PharmaHealthBg_AlphaHeader {
+  $mColor: rgb(185, 204, 255);
+  @extend .AlphaHeaderBG;
+  background: $mColor;
+  background: linear-gradient(270deg, $mColor 0%, rgba(0, 212, 255, 0) 100%);
+
+  @include bp-max-width($BreakPoint_Phone_L) {
+    background: $mColor;
+  }
+}
+
+.ContentCreatorhBg_AlphaHeader {
+  $mColor: rgb(189, 252, 228);
+  @extend .AlphaHeaderBG;
+  background: $mColor;
+  background: linear-gradient(90deg, $mColor 0%, rgba(0, 212, 255, 0) 100%);
+
+  @include bp-max-width($BreakPoint_Phone_L) {
+    background: $mColor;
+  }
+}
+
+.MasterLearningBg_AlphaHeader {
+  $mColor: rgb(221, 189, 252);
+  @extend .AlphaHeaderBG;
+  background: $mColor;
+  background: linear-gradient(270deg, $mColor 0%, rgba(0, 212, 255, 0) 100%);
+
+  @include bp-max-width($BreakPoint_Phone_L) {
+    background: $mColor;
+  }
+}
+
+
+// Alpha Header
+
+
+.AlphaHeader {
+  width: 100%;
+
+
+  padding: $UniversalPadding;
+
+
+
+}
+
+
+
+.AlphaHeaderColMain {
+  display: flex;
+  margin: auto;
+  width: fit-content;
+
+}
+
+.AlphaHeaderCol {
+  @extend .AlphaHeaderColMain;
+  flex-direction: row;
+
+  @include bp-max-width($BreakPoint_Phone_L) {
+
+    flex-direction: column-reverse;
+
+  }
+}
+
+.AlphaHeaderColRev {
+  @extend .AlphaHeaderColMain;
+  flex-direction: row-reverse;
+
+  @include bp-max-width($BreakPoint_Phone_L) {
+
+    flex-direction: column-reverse;
+
+  }
+}
+
+.AlphaHeaderRow1 {
+  // flex: auto;
+  padding: 5px;
+}
+
+.AlphaHeaderRow2 {
+  // flex: 1;
+  padding: 5px;
+
+}
+
+
+.AlphaHeaderTitle {
+  width: auto;
+  font-size: $TitleFontSize;
+
+  @extend .fontRobotoMono;
+  //   font-weight: 300;
+  color: $primaryColor;
+  margin: 0% !important;
+  text-align: center;
+
+  @include bp-max-width($BreakPoint_Tabet) {
+    font-size: $TitleFontSize_Tablet;
+  }
+
+  @include bp-max-width($BreakPoint_Phone_L) {
+    font-size: $TitleFontSize_Mobile;
+  }
+}
+
+.AlphaHeaderDesc {
+  //font-weight: 300;
+  @extend .fontRoboto;
+  margin-top: 5px;
+  max-width: 650px;
+
+  font-size: 20px;
+
+  // text-align: justify;
+  @include bp-max-width($BreakPoint_Tabet) {
+    text-align: left;
+    font-size: 15px;
+
+  }
+
+  @include bp-max-width($BreakPoint_Phone_L) {
+    text-align: left;
+    font-size: 15px;
+
+  }
+
+}
+
+.AlphaHeaderImg {
+  width: fit-content;
+  height: auto;
+
+  margin: auto;
+
+  @include bp-max-width($BreakPoint_Phone_L) {
+    width: 100%;
+
+  }
+
+  img {
+    margin: auto;
+
+    width: fit-content;
+    height: auto;
+    object-fit: cover;
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    max-width: 500px;
+
+    @include bp-max-width($BreakPoint_Tabet) {
+      width: 100%;
+      height: 140px;
+
+    }
+
+    @include bp-max-width($BreakPoint_Phone_L) {
+      width: 100%;
+      height: 150px;
+
+    }
+
+
+  }
+}
+
+
+// Skills Tabs
+
+// My Skills Section
+
+$Skill_Table_BreakPoint1: 799px;
+$Skill_Table_BreakPoint2: 453px;
+
+.SkillSection {
+  width: 100% !important;
+  padding: $UniversalPadding;
+  max-width: $UniversalMaxWidth;
+  margin: auto;
+}
+
+.SkillsTitle {
+
+  margin: auto;
+  width: fit-content;
+  @extend .fontRobotoMono;
+  font-size: $TitleFontSize;
+}
+
+
+.SkillBadge {
+  width: fit-content;
+  height: auto;
+  display: inline-block;
+  padding: 10px;
+  /*   border-color: #000000;
+  border-style: solid;
+  border-radius: 30px;
+ */
+}
+
+.SkillBadgeImage {
+  width: 100px;
+  height: auto;
+
+  @include bp-max-width($Skill_Table_BreakPoint1) {
+
+    width: 70px;
+
+
+  }
+}
+
+.SkillBadgeCol {
+  display: flex;
+  flex-direction: row;
+  //width: 100%;
+}
+
+.SkillBadgeRow1 {
+  flex: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+
+}
+
+.SkillBadgeRow2 {
+  flex: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+
+}
+
+.SkillBadgeTitle {
+  font-weight: 700;
+  @extend .fontRobotoCondensed;
+}
+
+.SkillBadgeDesc {
+  font-weight: 100;
+  @extend .fontRobotoCondensed;
+}
+
+
+.LineColor {
+  color: #9b9b9b;
+
+}
+
+.SkillCategoryChips {
+  width: fit-content;
+  margin: auto;
+}
+
+.SkillTable {
+  //width: min-content;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  //grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+
+  margin: auto;
+
+  @include bp-max-width($Skill_Table_BreakPoint1) {
+
+    grid-template-columns: repeat(2, 1fr);
+
+  }
+
+  @include bp-max-width($Skill_Table_BreakPoint2) {
+
+    grid-template-columns: repeat(1, 1fr);
+
+  }
+
+
+}
+
+.chipBody {
+  margin: 3px;
+}

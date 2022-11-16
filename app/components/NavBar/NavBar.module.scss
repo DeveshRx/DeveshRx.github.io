@@ -1,0 +1,103 @@
+@import './../../styles/fonts.scss';
+@import './../../styles/theme.scss';
+@import './../../styles/breakpoints.scss';
+
+
+$bcColor: rgba(0, 0, 0, 0.185);
+
+$NavbreakPoint1: 495px;
+
+.NavBar {
+    position: fixed;
+    top: 0px;
+    z-index: 15;
+}
+
+.MenuBtn {
+    display: none;
+    margin-top: 5px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+
+    width: fit-content;
+
+    /*    box-shadow: 2px 2px 20px 7px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 2px 2px 20px 7px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 2px 2px 20px 7px rgba(0, 0, 0, 0.5);
+ */
+}
+
+.NavBarCol {
+    display: flex;
+    flex-direction: row;
+}
+
+.NavBarRow1 {
+    flex: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: none;
+
+    @include bp-max-width($NavbreakPoint1) {
+        display: block;
+    }
+}
+
+.NavBarRow2 {
+    flex: 2;
+
+    //  text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    color: white;
+    margin: 15px;
+
+    a {
+        h1 {
+            margin: 0px;
+            margin-left: 5px !important;
+            @extend .fontRoboto;
+            font-size: 25px;
+            font-weight: 400;
+            @include bp-max-width($BreakPoint_Phone_M) {
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+.NavBarRow3 {
+    //    flex: auto;
+    float: right;
+    //width: fit-content;
+    margin-top: auto;
+    margin-bottom: auto;
+
+    display: block;
+
+.desktopOnly{
+    display: inline-block;
+    @include bp-max-width($NavbreakPoint1) {
+        display: none;
+    }
+    
+}
+    button {
+        margin: 2px;
+    }
+
+    #homebtn{
+        margin: auto;
+    }
+}
+
+.title {
+    text-align: center;
+    width: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/* .drawerBody{
+    width: 80%;
+} */

@@ -1,0 +1,46 @@
+/* 
+
+
+import React from "react";
+import Head from 'next/head'
+import Image from 'next/image'
+import styles from '../styles/Home.module.scss'
+import { ThemeProvider } from '@mui/material/styles';
+import { AppTheme } from './../lib/MUITheme';
+import NavBar from './../components/NavBar/NavBar';
+import { Button, Card, CardActions, CardContent, Chip } from '@mui/material';
+import {
+    BlankImg
+} from '../lib/assets';
+
+const myLoader = ({ src }) => {
+    return `${src}`;
+};
+
+
+export default class Temp extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {}
+    }
+
+    componentDidMount() {
+
+    }
+
+    render() {
+        return (<ThemeProvider theme={AppTheme} >
+            <div>
+  <Head>
+            <title>Devesh Chaudhari | DeveshRx </title>
+            <meta name="description" content="  " />
+            <link rel="icon" href="/favicon.ico" />
+          </Head>
+            </div>
+        </ThemeProvider>);
+    }
+}
+
+
+
+ */

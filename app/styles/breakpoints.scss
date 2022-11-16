@@ -1,0 +1,77 @@
+/*********************
+BREAKPOINTS
+Version: 3
+*********************/
+$BreakPoint_Tabet: 768px;
+$BreakPoint_Phone_L: 425px;
+$BreakPoint_Phone_M: 375px;
+
+
+@mixin breakpoint($point) {
+@if $point==desktop {
+    @media (max-width: 1440px) and (min-width: 1025px) {
+      @content;
+    }
+  } @else if $point==laptop {
+    @media (max-width: 1024px) and (min-width: 768px) {
+      @content;
+    }
+  } @else if $point==tablet {
+    @media (max-width: 768px) and (min-width: 425px) {
+      @content;
+    }
+  } @else if $point==mobile {
+    @media (max-width: 425px) and (min-width: 375) {
+      @content;
+    }
+  } @else if $point==mobile-m {
+    @media (max-width: 375px) and (min-width: 320px) {
+      @content;
+    }
+  } @else if $point==mobile-s {
+    @media (max-width: 320px) and (min-width: 10px) {
+      @content;
+    }
+  }@else if $point==laptop-plus {
+    @media (min-width: 769px) {
+      @content;
+    }
+  }@else if $point==desktop-lg {
+    @media (max-width: 1400px) and (min-width: 1199px) {
+      @content;
+    }
+  } 
+}
+
+@mixin custom-breakpoint-width($min, $max) {
+  @media (max-width: $max) and (min-width: $min) {
+    @content;
+  }
+}
+
+@mixin bp-max-width($max) {
+  @media (max-width: $max) {
+    @content;
+  }
+}
+@mixin bp-min-width($min) {
+  @media (min-width: $min) {
+    @content;
+  }
+}
+
+
+/* ==== 
+
+@mixin max-breakpoint($point) {
+    @media (min-width: $point)  {
+        @content ;
+    }
+}
+*/
+/*
+ 
+@include breakpoint(mobile) {  }
+
+*/
+/****************/

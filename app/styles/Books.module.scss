@@ -1,0 +1,102 @@
+@import './fonts.scss';
+@import './theme.scss';
+@import './breakpoints.scss';
+
+$UniversalPadding: 15px;
+$TitleFontSize: 30pt;
+$UniversalMaxWidth: 2000px;
+
+// Theme Color
+// https://m2.material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=2962FF&secondary.color=FFD600
+$primaryColor: #2962ff;
+$primaryLightColor: #768fff;
+$primaryDarkColor: #0039cb;
+$secondaryColor: #ffd600;
+$secondaryLightColor: #ffff52;
+$secondaryDarkColor: #c7a500;
+$primaryTextColor: #ffffff;
+$secondaryTextColor: #000000;
+//===========
+
+
+
+
+.content {
+    padding: 0px !important;
+    margin: 0px !important;
+    @extend .fontRoboto;
+    width: 100% !important;
+}
+
+
+// Header Section
+
+.header {
+    width: 100%;
+    height: 300px;
+}
+
+.headerImg {
+    position: relative;
+
+    img {
+        height: 300px;
+        width: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    /*  #overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        right: 0px;
+        left: 0px;
+        bottom: 0px;
+        background-color: #000000;
+        z-index: 1;
+    } */
+}
+
+.headerTitle {
+    @extend .fontRoboto;
+    position: absolute;
+    top: 100px;
+    left: 0px;
+    right: 0px;
+    text-align: center;
+    font-size: 40px;
+    color: #ffffff;
+    font-weight: 900;
+
+
+    text-shadow: 2px 0px 1px rgb(0, 0, 0),
+        0px 2px 1px rgb(0, 0, 0),
+        -2px 0px 1px rgb(0, 0, 0),
+        0px -2px 1px rgb(0, 0, 0);
+
+}
+
+.BookList{
+    padding: $UniversalPadding;
+}
+
+// Book Item
+.BookItem {
+    width: fit-content;
+    height: auto;
+    max-width: 300px;
+}
+
+.BookCover{
+    //padding: 5px;
+    img{
+        width: 100%;
+        height: auto;
+        border-radius: 15px;
+
+    }
+}
+
+

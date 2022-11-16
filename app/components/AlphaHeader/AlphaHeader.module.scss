@@ -1,0 +1,31 @@
+@import './../../styles/fonts.scss';
+@import './../../styles/theme.scss';
+@import './../../styles/breakpoints.scss';
+
+$UniversalPadding: 15px;
+$TitleFontSize: 30pt;
+
+.AlphaHeader {
+    width: 100%;
+
+
+    padding: $UniversalPadding;
+
+    h1 {
+        width: auto;
+        font-size: $TitleFontSize;
+
+        @extend .fontRobotoMono;
+        //   font-weight: 300;
+        color: $primaryColor;
+        margin: 0% !important;
+    }
+
+    p {
+        font-weight: 300;
+        @extend .fontRoboto;
+        margin-top: 5px;
+    }
+}
+
+
