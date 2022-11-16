@@ -6,6 +6,7 @@ const nextConfig = {
   reactStrictMode: true,
   eslint: { ignoreDuringBuilds: true },
   trailingSlash: true,
+  assetPrefix: './',
   images: {
     unoptimized: true,
   },
