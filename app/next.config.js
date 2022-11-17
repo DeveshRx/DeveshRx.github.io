@@ -1,12 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+ // reactStrictMode: true,
   swcMinify: true,
 //  distDir: 'build',
   reactStrictMode: true,
   eslint: { ignoreDuringBuilds: true },
   trailingSlash: true,
-  assetPrefix: './',
+ assetPrefix: './',
   images: {
     unoptimized: true,
   },
