@@ -5,7 +5,7 @@ const nextConfig = {
   //  distDir: 'build',
   reactStrictMode: true,
   eslint: { ignoreDuringBuilds: true },
-  trailingSlash: true,
+ // trailingSlash: true,
  // assetPrefix: './',
   images: {
     unoptimized: true,

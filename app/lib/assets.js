@@ -32,7 +32,7 @@ export const HTML5_Skill_Badge = require('../assets/img/skill_badges/skills_badg
 export const Java_Skill_Badge = require('../assets/img/skill_badges/skills_badge_Java.png');
 export const NextJS_Skill_Badge = require('../assets/img/skill_badges/skills_badge_NextJs.png');
 export const NodeJS_Skill_Badge = require('../assets/img/skill_badges/skills_badge_NodeJs.png');
-export const ReactJs_Skill_Badge = require('../assets/img/skill_badges/skills_badge_ReactJs.png');
+export const ReactJs_Skill_Badge = require('../assets/img/skill_badges/skills_badge_reactjs.png');
 export const Rx_Skill_Badge = require('../assets/img/skill_badges/skills_badge_Rx.png');
 export const Sass_Skill_Badge = require('../assets/img/skill_badges/skills_badge_Sass.png');
 export const Unity3d_Skill_Badge = require('../assets/img/skill_badges/skills_badge_Unity-3D.png');
@@ -49,26 +49,26 @@ export const TextMaster_App_Icon = require('../assets/img/product_icons/textmast
 
 export const Dev_Skills = require('../assets/img/dev_skills.png');
 
-export const Dev_Cowboy_Hat=require('../assets/img/devesh-cowboy-hat_Circle-Pic.png');
+export const Dev_Cowboy_Hat = require('../assets/img/devesh-cowboy-hat_Circle-Pic.png');
 
-export const GitHub_Octacat=require('../assets/img/Octocat.jpg');
+export const GitHub_Octacat = require('../assets/img/Octocat.jpg');
 
-export const AndroidDev_Banner=require('../assets/img/RAW/pexels-lisa-fotios-1092644.jpg');
-export const WebDev_Banner=require('../assets/img/RAW/pexels-pixabay-270360.jpg');
-export const BusinessDev_Banner=require('../assets/img/RAW/pexels-fauxels-3184418.jpg');
-export const GameDev_Banner=require('../assets/img/RAW/pexels-pixabay-459762.jpg');
-export const VideoEditing_Banner=require('../assets/img/RAW/pexels-donald-tong-66134.jpg');
+export const AndroidDev_Banner = require('../assets/img/RAW/pexels-lisa-fotios-1092644.jpg');
+export const WebDev_Banner = require('../assets/img/RAW/pexels-pixabay-270360.jpg');
+export const BusinessDev_Banner = require('../assets/img/RAW/pexels-fauxels-3184418.jpg');
+export const GameDev_Banner = require('../assets/img/RAW/pexels-pixabay-459762.jpg');
+export const VideoEditing_Banner = require('../assets/img/RAW/pexels-donald-tong-66134.jpg');
 
-export const ContentCreation_Banner=require('../assets/img/RAW/pexels-picjumbocom-196644.jpg');
+export const ContentCreation_Banner = require('../assets/img/RAW/pexels-picjumbocom-196644.jpg');
 
 
-export const PharmaDrug_Banner=require('../assets/img/RAW/lemon-gae1119a8f_1280.jpg');
+export const PharmaDrug_Banner = require('../assets/img/RAW/lemon-gae1119a8f_1280.jpg');
 
-export const Learning_Banner=require('../assets/img/RAW/learning-gd2477fd86_1280.jpg');
+export const Learning_Banner = require('../assets/img/RAW/learning-gd2477fd86_1280.jpg');
 
-export const AcademicsImg=require('../assets/img/RAW/books-g67c2b3a3d_1280.jpg');
+export const AcademicsImg = require('../assets/img/RAW/books-g67c2b3a3d_1280.jpg');
 
-export const TheEnchantressBookImg=require('../assets/img/the_enchantress_devesh.jpg');
+export const TheEnchantressBookImg = require('../assets/img/the_enchantress_devesh.jpg');
 
 
 
